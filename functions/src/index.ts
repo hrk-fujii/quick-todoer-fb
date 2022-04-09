@@ -1,3 +1,10 @@
+import * as adminApp from "firebase-admin/app";
+import * as firebaseApp from "firebase/app";
+import * as config from "./config";
+
+adminApp.initializeApp();
+firebaseApp.initializeApp(config.firebaseConfig);
+
 export const fireStoreFunctions = require("./fireStoreFunctions");
 export const authFunctions = require("./authFunctions");
 
