@@ -1,6 +1,5 @@
-import * as functions from "firebase-functions";
-
 export const fireStoreFunctions = require("./fireStoreFunctions");
+export const authFunctions = require("./authFunctions");
 
 
 // // Start writing Firebase Functions
