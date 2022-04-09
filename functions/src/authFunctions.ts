@@ -12,7 +12,7 @@ runWith({
   const auth = firebaseAuth.getAuth();
   
   if (!(data.password)) {
-    throw new functions.https.HttpsError("invalid-argument", "password is not found" + JSON.stringify(data));
+    throw new functions.https.HttpsError("invalid-argument", "password is not found");
   }
   if (!(data.newPassword)) {
     throw new functions.https.HttpsError("invalid-argument", "newPassword is not found");
