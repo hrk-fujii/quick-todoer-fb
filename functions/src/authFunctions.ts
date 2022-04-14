@@ -77,7 +77,11 @@ runWith({
 
   //run update email-address. 
   try {
-    authAdmin.updateUser(context?.auth?.token?.uid, {email: data?.newEmail});
+    if (auth.currentUser) {
+      await firebaseAuth.updateEmail(auth.currentUser, data?.newEmail);
+    } else {
+      throw new functions.https.HttpsError('permission-denied', "authentication failed");
+    }
   } catch (error) {
     throw new functions.https.HttpsError("cancelled", "update email failed");
   }
